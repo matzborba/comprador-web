@@ -1,11 +1,14 @@
-import Navbar from "../components/Layout/NavBar"
+import Container from "../components/Layout/Container/Container"
+import Navbar from "../components/Layout/NavBar/NavBar"
+
 
 function EcommerceView() { 
     return (
-        <div>
-        <Navbar />
-        <h1>Abates</h1>
-    </div>
+        <Container>
+            <Navbar/>
+            <h1>Ecommerce</h1>
+        </Container>
+
     )
 }
 export default EcommerceView

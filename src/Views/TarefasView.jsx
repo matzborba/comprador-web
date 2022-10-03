@@ -1,10 +1,13 @@
-import Navbar from "../components/Layout/NavBar"
+import Container from "../components/Layout/Container/Container"
+import Navbar from "../components/Layout/NavBar/NavBar"
+
 
 function TarefasView() { 
     return (
-        <div>
-        <Navbar />
-    </div>
+        <Container>
+            <Navbar />
+            <h1>Tarefas</h1>
+        </Container>
     )
 }
 export default TarefasView

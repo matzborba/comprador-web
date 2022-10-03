@@ -1,11 +1,13 @@
-import Navbar from "../components/Layout/NavBar"
+import Container from "../components/Layout/Container/Container"
+import Navbar from "../components/Layout/NavBar/NavBar"
+
 
 function AbatesView() {
     return (
-        <div>
+        <Container>
             <Navbar />
             <h1>Abates</h1>
-        </div>
+        </Container>
     )
 }
 export default AbatesView

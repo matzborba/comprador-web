@@ -1,11 +1,8 @@
-import Navbar from "../components/Layout/NavBar";
+import HomePageContent from "../components/pages/Home/HomePageContent";
 
 function HomeView() {
     return (
-        <div>
-        <Navbar />
-        <h1>Abates</h1>
-    </div>
+        <HomePageContent/>
     )
  }
 export default HomeView;

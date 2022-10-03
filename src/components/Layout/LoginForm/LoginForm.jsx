@@ -1,6 +1,7 @@
 import LogoSvg from '../LogoSvg';
 import styles from './LoginForm.module.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 function LoginForm() {
 
@@ -16,7 +17,7 @@ function LoginForm() {
             <LogoSvg />
             <input type="text" placeholder="Usuário" />
             <input type="password" placeholder="Senha"/>
-            <p>Esqueci minha senha</p>
+            <Link>Esqueci minha senha</Link>
             <button onClick={Login}>Entrar</button>
         </div>
     )

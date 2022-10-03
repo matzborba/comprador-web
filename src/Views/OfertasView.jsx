@@ -1,11 +1,13 @@
-import Navbar from "../components/Layout/NavBar";
+import Container from "../components/Layout/Container/Container";
+import Navbar from "../components/Layout/NavBar/NavBar";
+
 
 function OfertasView() {
     return (
-        <div>
-        <Navbar />
-        <h1>Abates</h1>
-    </div>
+        <Container>
+            <Navbar />
+            <h1>Ofertas</h1>
+        </Container>
     )
 }
 
