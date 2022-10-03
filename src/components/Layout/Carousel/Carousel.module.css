@@ -1,0 +1,9 @@
+.itens_content {
+  overflow-x: scroll;
+  width: 450px;
+}
+
+.itens::-webkit-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
