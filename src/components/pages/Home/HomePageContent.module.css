@@ -141,7 +141,7 @@
 
 .homepage_task_card_info{
     display: flex;
-    gap: 20px;
+    gap: 40px;
     margin: 10px 0;
 }
 
@@ -163,4 +163,16 @@
     width: 100%;
     flex-direction: column;
     gap: 10px;
+}
+
+.teste {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.teste2 {
+    display: flex;
+    justify-content: space-between;
 }

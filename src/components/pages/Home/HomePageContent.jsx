@@ -7,8 +7,8 @@ import StatusTask from "../../Layout/StatusTask/StatusTask"
 import styles from "./HomePageContent.module.css"
 import { useEffect, useState } from  "react"
 import { Link } from "react-router-dom"
-import BoiSvg from "../../../assets/Animais/BoiSvg"
-import VacaSvg from "../../../assets/Animais/VacaSvg"
+//import BoiSvg from "../../../assets/Animais/BoiSvg"
+//import VacaSvg from "../../../assets/Animais/VacaSvg"
 
 
 
@@ -145,29 +145,6 @@ function HomePageContent() {
                         </div>
                         <div className={styles.homepage_purchase_card}>
                             <h3 style={{ color: "black" }}>Minhas ofertas</h3>
-                            <div>
-                                <BasicCard color="#F8F9FA">
-                                    <div>
-                                        <div>
-                                            <h3 style={{ color: "black" }}>Total animais</h3>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <BoiSvg/>
-                                                <h4>Macho</h4>
-                                                <p>100</p>
-                                            </div>
-                                            <div>
-                                                <VacaSvg/>0
-                                                <h4>Femea</h4>
-                                                <p>500</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </BasicCard>
-                                <BasicCard color="#F8F9FA">
-                                </BasicCard>
-                            </div>
                         </div>
                     </div>
                 </div>
