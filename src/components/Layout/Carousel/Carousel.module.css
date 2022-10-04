@@ -1,6 +1,6 @@
 .itens_content {
   overflow-x: scroll;
-  width: 450px;
+  width: 100%;
 }
 
 .itens::-webkit-scrollbar {

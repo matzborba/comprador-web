@@ -136,6 +136,7 @@
 }
 
 .homepage_task_card {
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -161,7 +162,7 @@
 
 .homepage_purchase_card {
   display: flex;
-  width: 100%;
+  width: 50%;
   flex-direction: column;
   gap: 10px;
 }
@@ -225,8 +226,9 @@
 }
 
 .carousel_table_content {
-  width: 250px;
+  width: 100%;
   height: 200px;
+  gap: 20px;
 }
 
 .itens_content_carousel {
@@ -253,10 +255,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 10px;
+  padding: 5px 10px;
   gap: 6px;
   min-width: 250px;
-  height: 200px;
+  height: 220px;
   background: #ffffff;
   border: 1px solid #ced4da;
   box-shadow: 0px 2px 2px rgba(33, 37, 41, 0.06),
@@ -267,6 +269,14 @@
 .p_suave {
   font-size: 14px;
   color: #6c757d;
+}
+
+.orderDate {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: right;
+  color: #adb5bd;
 }
 
 .itens_carousel_info {
@@ -288,9 +298,9 @@
 
 .itens_carousel_info_3 {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  padding-bottom: 5px;
+  align-items: center;
+  padding: 5px 0px;
 }
 
 .redirect_carousel {
@@ -300,21 +310,21 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 150%;
-  /* identical to box height, or 18px */
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
-  /* Primario_Azul */
-
   color: #52afe3;
 }
 
 .carousel_status {
   width: 100px;
-  height: 20px;
-  background-color: #e30612;
+  height: 25px;
+  background-color: #a3e2b4;
   border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel_status span {
@@ -324,5 +334,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2px;
+  color: #55a96c;
+}
+
+.carousel_container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  gap: 10px;
+}
+
+.carousel_filter_link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel_filter_link select {
+  margin: 0;
+}
+
+.carousel_filter_link a {
+  color: #212529;
+}
+
+.table_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table_title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table_title a {
+  color: #212529;
+}
+
+@media screen and (max-width: 1510px) {
+  .rounded_charts_content svg {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .rounded_charts_content svg {
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 auto;
+  }
 }

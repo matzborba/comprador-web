@@ -1,11 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LogoSvg from "../LogoSvg";
 import NotifcationIcon from "./NotifcationIcon/NotificationIcon";
 import styles from "./NavBar.module.css"
 import PerfilSvg from "../../../assets/Perfil.svg"
+import * as React from "react";
 
 
 function Navbar() {
+
+  let activeStyle = {
+    fontWeight: 600,
+    fontSize: "16px",
+    height: "36px",
+    width: "130px",
+    backgroundColor:"#495057",
+    color: "#ffffff",
+    textDecoration: "none",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "6px 12px",
+    borderRadius: "8px"
+  }
 
   return (
     <nav className={styles.nav_content}>
@@ -21,24 +37,24 @@ function Navbar() {
           <img src={PerfilSvg} alt="foto do usuario"/>
         </div>
         <ul>
-          <li>
-            <Link to="/home">Início</Link>
-          </li>
-          <li>
-            <Link to="/abates">Meus abates</Link>
-          </li>
-          <li>
-            <Link to="/pedidos">Meus pedidos</Link>
-          </li>
-          <li>
-            <Link to="/ecommerce">E-commerce</Link>
-          </li>
-          <li>
-            <Link to="/ofertas">Minhas ofertas</Link>
-          </li>
-          <li>
-            <Link to="/tarefas">Minhas tarefas</Link>
-          </li>
+            <NavLink to="/home" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>Início</NavLink>
+            <NavLink to="/abates" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>Meus abates</NavLink>
+            <NavLink to="/pedidos" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>Meus pedidos</NavLink>
+            <NavLink to="/ecommerce" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>E-commerce</NavLink>
+            <NavLink to="/ofertas" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>Minhas ofertas</NavLink>
+            <NavLink to="/tarefas" className={({ isActive }) =>
+              isActive ? styles.activeStyle : styles.desactiveStyle
+            }>Minhas tarefas</NavLink>
         </ul>
       </div>
     </nav>

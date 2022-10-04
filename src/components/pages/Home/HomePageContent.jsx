@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import BoiSvg from "../../../assets/Animais/BoiSvg";
 import VacaSvg from "../../../assets/Animais/VacaSvg";
 import Carousel from "../../Layout/Carousel/Carousel";
+import { faker } from "@faker-js/faker";
+import Table from "../../Layout/Table/Table";
 
 function HomePageContent() {
   const [color, setColor] = useState("");
@@ -30,6 +32,55 @@ function HomePageContent() {
         setColor("#B39243");
       }
     });
+  };
+
+  const labels = [
+    "09/03",
+    "09/04",
+    "04/05",
+    "09/06",
+    "09/07",
+    "09/08",
+    "09/09",
+    "09/10",
+    "09/11",
+    "09/12",
+  ];
+
+  const chartData = {
+    labels,
+    datasets: [
+      {
+        type: "line",
+        label: "Meta",
+        borderColor: "rgba(73, 80, 87, 1)",
+        borderWidth: 2,
+        fill: false,
+        data: labels.map(() => 50),
+      },
+      {
+        type: "line",
+        label: "Escala",
+        borderColor: "rgba(82, 175, 227, 1)",
+        borderWidth: 2,
+        fill: false,
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+      },
+      {
+        type: "bar",
+        label: "Comprador",
+        backgroundColor: "rgba(233, 56, 66, 1)",
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+        borderColor: "white",
+        borderWidth: 2,
+      },
+      {
+        type: "bar",
+        label: "Dataset 3",
+        backgroundColor: "rgba(70, 197, 105, 1)",
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+      },
+    ],
   };
 
   const carouselData = [
@@ -174,12 +225,12 @@ function HomePageContent() {
           </BasicCard>
         </div>
         <div className={styles.homepage_principal_info}>
-          <HomePageChart />
+          <HomePageChart data={chartData} />
           <div className={styles.homepage_task_purchase}>
             <div className={styles.homepage_task_card}>
               <h3 style={{ color: "black" }}>Minhas compras</h3>
               <div className={styles.homepage_task_card_info}>
-                <BasicCard color="#ECF9F0" align="center">
+                <BasicCard color="#ECF9F0" align="center" w="30%">
                   <div className={styles.basic_card_style}>
                     <h4>Volume total</h4>
                     <h1>100</h1>
@@ -187,7 +238,7 @@ function HomePageContent() {
                     <h4>215,00</h4>
                   </div>
                 </BasicCard>
-                <BasicCard color="#DCEFF9" align="center">
+                <BasicCard color="#DCEFF9" align="center" w="30%">
                   <div className={styles.basic_card_style}>
                     <h4>Volume total</h4>
                     <h1>100</h1>
@@ -195,7 +246,7 @@ function HomePageContent() {
                     <h4>215,00</h4>
                   </div>
                 </BasicCard>
-                <BasicCard color="#FCE6E7" align="center">
+                <BasicCard color="#FCE6E7" align="center" w="30%">
                   <div className={styles.basic_card_style}>
                     <h4>Volume total</h4>
                     <h1>100</h1>
@@ -251,7 +302,17 @@ function HomePageContent() {
             </div>
           </div>
           <div className={styles.carousel_table_content}>
-            <div>
+            <div className={styles.carousel_container}>
+              <div className={styles.carousel_filter_link}>
+                <select
+                  placeholder="Por Linha"
+                  name="select-data"
+                  defaultValue="0"
+                >
+                  <option value="0">Por linha</option>
+                </select>
+                <Link to="/pedidos">Ver todos os pedidos</Link>
+              </div>
               <Carousel>
                 <div className={styles.cards_carousel}>
                   {carouselData.map((i) => (
@@ -264,7 +325,7 @@ function HomePageContent() {
                           <div className={styles.carousel_status}>
                             <span>{i.status}</span>
                           </div>
-                          <p>{i.date}</p>
+                          <p className={styles.orderDate}>{i.date}</p>
                         </div>
                         <div className={styles.itens_content_carousel}>
                           <p className={styles.p_negrito}>Pedido</p>
@@ -303,7 +364,15 @@ function HomePageContent() {
                 </div>
               </Carousel>
             </div>
-            <div>tabela</div>
+            <div className={styles.table_container}>
+              <div className={styles.table_title}>
+                <h3 style={{ color: "black" }}>Últimas ofertas</h3>
+                <Link to="/ofertas">Ver todas as ofertas</Link>
+              </div>
+              <div>
+                <Table />
+              </div>
+            </div>
           </div>
         </div>
       </div>
