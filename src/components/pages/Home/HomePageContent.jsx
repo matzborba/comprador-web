@@ -12,6 +12,7 @@ import VacaSvg from "../../../assets/Animais/VacaSvg";
 import Carousel from "../../Layout/Carousel/Carousel";
 import { faker } from "@faker-js/faker";
 import Table from "../../Layout/Table/Table";
+import IconFilter from "../../../assets/IconFilter";
 
 function HomePageContent() {
   const [color, setColor] = useState("");
@@ -64,13 +65,13 @@ function HomePageContent() {
         borderColor: "rgba(82, 175, 227, 1)",
         borderWidth: 2,
         fill: false,
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+        data: labels.map(() => faker.datatype.number({ min: -40, max: 80 })),
       },
       {
         type: "bar",
         label: "Comprador",
         backgroundColor: "rgba(233, 56, 66, 1)",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+        data: labels.map(() => faker.datatype.number({ min: -40, max: 80 })),
         borderColor: "white",
         borderWidth: 2,
       },
@@ -78,7 +79,7 @@ function HomePageContent() {
         type: "bar",
         label: "Dataset 3",
         backgroundColor: "rgba(70, 197, 105, 1)",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+        data: labels.map(() => faker.datatype.number({ min: -40, max: 80 })),
       },
     ],
   };
@@ -304,13 +305,10 @@ function HomePageContent() {
           <div className={styles.carousel_table_content}>
             <div className={styles.carousel_container}>
               <div className={styles.carousel_filter_link}>
-                <select
-                  placeholder="Por Linha"
-                  name="select-data"
-                  defaultValue="0"
-                >
-                  <option value="0">Por linha</option>
-                </select>
+                <button className={styles.btn_filter}>
+                  <span>Por linha</span>
+                  <IconFilter />
+                </button>
                 <Link to="/pedidos">Ver todos os pedidos</Link>
               </div>
               <Carousel>
